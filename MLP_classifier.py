@@ -1,3 +1,4 @@
+
 #import sklearn as sk
 #import numpy as np
 #import matplotlib.pyplot as plt
@@ -24,9 +25,11 @@ test_target = digits['target'][tlimit:]
 print (len(train_data), len(test_data))
 
 
-from sklearn import svm
+from sklearn import neural_network
 
-classy = svm.SVC(gamma=0.001, C = 100.)
+classy = neural_network.MLPClassifier(hidden_layer_sizes=(100), max_iter=1000, solver='adam')
+
+
 
 classy.fit(train_data, train_target)
 
@@ -42,4 +45,14 @@ diffs = [arediff(x) for x in range(len(test_target))]
 print (sum(diffs))
 
 print ((len(diffs)-sum(diffs))/len(diffs))
+
+
+#MLP classifier processing starts here
+
+#from sklearn import neural_network
+
+#classy = neural_network.MLPClassifier(hidden_layer_sizes=(64,32,32))
+
+#classy.fit(train_data, train_target)
+# use this instead of the classy SVC code... and implement as we want. To add more layers, add more numbers to hidden layer sizes and restart again
 
