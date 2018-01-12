@@ -56,3 +56,4 @@ print ((len(diffs)-sum(diffs))/len(diffs))
 #classy.fit(train_data, train_target)
 # use this instead of the classy SVC code... and implement as we want. To add more layers, add more numbers to hidden layer sizes and restart again
 
+
